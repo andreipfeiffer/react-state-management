@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 import Item from "./Item";
-import "./ItemWrapper.css";
+import "./assets/ItemWrapper.css";
 
 @observer
 export default class ItemWrapper extends Component {

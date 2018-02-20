@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
-import "./Item.css";
+import "./assets/Item.css";
 
 function uuid() {
   return (
