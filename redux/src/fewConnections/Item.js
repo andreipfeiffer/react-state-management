@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-
-import { updateCount } from "./actions";
-import "./Item.css";
+import "../assets/Item.css";
 
 function uuid() {
   return (
@@ -40,25 +36,10 @@ class Item extends Component {
         className="Item"
         onClick={this.increment}
       >
-        {/* {this.props.counts.get(this.id) || 0} */}
         {this.props.counts.get(this.id) || 0}
       </div>
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  // count: state.counts.get(ownProps.id) || 0,
-  counts: state.counts,
-  // depth: state.depth
-});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      updateCount
-    },
-    dispatch
-  );
-
-export default connect(mapStateToProps, mapDispatchToProps)(Item);
+export default Item;

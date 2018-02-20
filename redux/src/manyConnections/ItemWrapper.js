@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Item from "./Item";
-import "./ItemWrapper.css";
+import "../assets/ItemWrapper.css";
 
 export default class ItemWrapper extends Component {
   render() {

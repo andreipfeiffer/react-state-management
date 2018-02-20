@@ -2,25 +2,17 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { updateDepth, updateCount, updateAllCounts } from "./actions";
+import { updateDepth, updateAllCounts } from "../actions";
 
 import ItemWrapper from "./ItemWrapper";
 
-import logo from "./logo.svg";
-import "./App.css";
+import logo from "../assets/logo.svg";
+import "../assets/App.css";
 
 class App extends Component {
   updateDepth = event => {
     this.props.updateDepth(event.target.value);
   };
-
-  updateCount = id => {
-    this.props.updateCount(id);
-  };
-
-  // getCount = id => {
-  //   return this.props.counts.get(id) || 0;
-  // };
 
   render() {
     return (
@@ -38,13 +30,7 @@ class App extends Component {
           <button onClick={this.props.updateAllCounts}>Increment All</button>
         </p>
 
-        <ItemWrapper
-          currentDepth={0}
-          depth={this.props.depth}
-          updateCount={this.updateCount}
-          counts={this.props.counts}
-          // getCount={this.getCount}
-        />
+        <ItemWrapper currentDepth={0} depth={this.props.depth} />
       </div>
     );
   }
@@ -59,8 +45,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       updateDepth,
-      updateAllCounts,
-      updateCount
+      updateAllCounts
     },
     dispatch
   );
