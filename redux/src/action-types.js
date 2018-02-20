@@ -1,0 +1,3 @@
+export const UPDATE_DEPTH = "UPDATE_DEPTH";
+export const UPDATE_COUNT = "UPDATE_COUNT";
+export const UPDATE_ALL_COUNTS = "UPDATE_ALL_COUNTS";
