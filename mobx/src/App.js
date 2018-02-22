@@ -3,7 +3,7 @@ import { observer, inject } from "mobx-react";
 
 import ItemWrapper from "./ItemWrapper";
 
-import logo from "./assets/logo.svg";
+import logo from "./assets/mobx.svg";
 import "./assets/App.css";
 
 @inject("store")
@@ -17,22 +17,37 @@ class App extends Component {
     this.props.store.updateAllCounts();
   };
 
+  toggleContinous = () => {
+    this.props.store.toggleContinous();
+  }
+
   render() {
     return (
-      <div className="App">
+      <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">MobX</h1>
+          <h2 className="App-subtitle">connected &nbsp;</h2>
         </header>
-        <p className="App-intro">
+        <p className="App-menu">
           <input
             type="number"
             value={this.props.store.depth}
             onChange={this.updateDepth}
           />
-          <button onClick={this.updateAllCounts}>Increment All</button>
+          <button onClick={this.updateAllCounts}>+1 all</button>
+          <input
+            id="toggle"
+            type="checkbox"
+            value={this.props.store.isContinous}
+            onChange={this.toggleContinous}
+          />
+          <label htmlFor="toggle">continous</label>
+          <span className="label">continous update</span>
         </p>
-        <ItemWrapper currentDepth={0} depth={this.props.store.depth} />
+        <div className="App-content">
+          <ItemWrapper currentDepth={0} depth={this.props.store.depth} />
+        </div>
       </div>
     );
   }

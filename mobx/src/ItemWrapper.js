@@ -7,7 +7,7 @@ import "./assets/ItemWrapper.css";
 export default class ItemWrapper extends Component {
   render() {
     return (
-      <div>
+      <div className="ItemWrapper-container">
         <Item />
         {this.props.currentDepth < this.props.depth ? (
           <div className="ItemWrapper">

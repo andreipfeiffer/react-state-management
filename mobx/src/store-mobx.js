@@ -9,6 +9,7 @@ useStrict(true);
 
 class Store {
   @observable depth = 0;
+  @observable isContinous = false;
   @observable counts = new Map();
 
   getCount = id => {
@@ -18,6 +19,11 @@ class Store {
   @action
   updateDepth(value) {
     this.depth = value;
+  }
+
+  @action
+  toggleContinous() {
+    this.isContinous = !this.isContinous;
   }
 
   @action
