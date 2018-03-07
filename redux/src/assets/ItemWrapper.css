@@ -1,5 +1,9 @@
+.ItemWrapper-container {
+  display: inline-block;
+}
+
 .ItemWrapper {
   display: flex;
-  border: 1px red solid;
   justify-content: center;
+  padding: 4px 0;
 }

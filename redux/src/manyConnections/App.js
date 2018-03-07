@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { updateDepth, updateAllCounts } from "../actions";
+import { updateDepth, updateAllCounts, toggleContinous } from "../actions";
 
 import ItemWrapper from "./ItemWrapper";
 
-import logo from "../assets/logo.svg";
+import logo from "../assets/redux.svg";
 import "../assets/App.css";
 
 class App extends Component {
@@ -14,20 +14,38 @@ class App extends Component {
     this.props.updateDepth(event.target.value);
   };
 
+  updateAllCounts = () => {
+    this.props.updateAllCounts();
+  };
+
+  toggleContinous = () => {
+    this.props.toggleContinous();
+  };
+
   render() {
+    console.log(this.props.isContinous)
     return (
-      <div className="App">
+      <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Redux</h1>
+          <h2 className="App-subtitle">with maaaaany connections</h2>
         </header>
-        <p className="App-intro">
+        <p className="App-menu">
           <input
             type="number"
             value={this.props.depth}
             onChange={this.updateDepth}
           />
-          <button onClick={this.props.updateAllCounts}>Increment All</button>
+          <button onClick={this.updateAllCounts}>+1 all</button>
+          <input
+            id="toggle"
+            type="checkbox"
+            checked={this.props.isContinous}
+            onChange={this.toggleContinous}
+          />
+          <label htmlFor="toggle">continous</label>
+          <span className="label">continous update</span>
         </p>
 
         <ItemWrapper currentDepth={0} depth={this.props.depth} />
@@ -38,14 +56,15 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   depth: state.depth,
-  counts: state.counts
+  isContinous: state.isContinous
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       updateDepth,
-      updateAllCounts
+      updateAllCounts,
+      toggleContinous
     },
     dispatch
   );

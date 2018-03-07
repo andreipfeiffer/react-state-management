@@ -2,11 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { updateDepth, updateCount, updateAllCounts } from "../actions";
+import {
+  updateDepth,
+  updateCount,
+  updateAllCounts,
+  toggleContinous
+} from "../actions";
 
 import ItemWrapper from "./ItemWrapper";
 
-import logo from "../assets/logo.svg";
+import logo from "../assets/redux.svg";
 import "../assets/App.css";
 
 class App extends Component {
@@ -18,20 +23,37 @@ class App extends Component {
     this.props.updateCount(id);
   };
 
+  updateAllCounts = () => {
+    this.props.updateAllCounts();
+  };
+
+  toggleContinous = () => {
+    this.props.toggleContinous();
+  };
+
   render() {
     return (
-      <div className="App">
+      <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Redux</h1>
+          <h2 className="App-subtitle">with few connections</h2>
         </header>
-        <p className="App-intro">
+        <p className="App-menu">
           <input
             type="number"
             value={this.props.depth}
             onChange={this.updateDepth}
           />
-          <button onClick={this.props.updateAllCounts}>Increment All</button>
+          <button onClick={this.updateAllCounts}>+1 all</button>
+          <input
+            id="toggle"
+            type="checkbox"
+            checked={this.props.isContinous}
+            onChange={this.toggleContinous}
+          />
+          <label htmlFor="toggle">continous</label>
+          <span className="label">continous update</span>
         </p>
 
         <ItemWrapper
@@ -39,6 +61,7 @@ class App extends Component {
           depth={this.props.depth}
           updateCount={this.updateCount}
           counts={this.props.counts}
+          isContinous={this.props.isContinous}
         />
       </div>
     );
@@ -47,7 +70,8 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   depth: state.depth,
-  counts: state.counts
+  counts: state.counts,
+  isContinous: state.isContinous
 });
 
 const mapDispatchToProps = dispatch =>
@@ -55,7 +79,8 @@ const mapDispatchToProps = dispatch =>
     {
       updateDepth,
       updateAllCounts,
-      updateCount
+      updateCount,
+      toggleContinous
     },
     dispatch
   );

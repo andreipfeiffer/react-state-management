@@ -13,3 +13,7 @@ export const updateCount = id => ({
 export const updateAllCounts = () => ({
   type: types.UPDATE_ALL_COUNTS
 });
+
+export const toggleContinous = () => ({
+  type: types.TOGGLE_CONTINOUS
+});

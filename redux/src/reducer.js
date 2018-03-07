@@ -28,6 +28,13 @@ export default (state, action) => {
         counts: incrementedCounts
       };
 
+    case types.TOGGLE_CONTINOUS:
+    console.log(state)
+      return {
+        ...state,
+        isContinous: !state.isContinous
+      }
+
     default:
       return state;
   }

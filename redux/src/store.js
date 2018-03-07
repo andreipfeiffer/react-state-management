@@ -2,8 +2,9 @@ import { createStore } from "redux";
 import reducer from "./reducer";
 
 const initialState = {
-  depth: 0,
-  counts: new Map()
+  depth: 1,
+  counts: new Map(),
+  isContinous: true
 };
 
 export default createStore(

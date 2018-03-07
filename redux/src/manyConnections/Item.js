@@ -22,11 +22,15 @@ class Item extends Component {
   }
 
   componentDidMount() {
-    this.reference.addEventListener("mousemove", this.increment);
+    this.reference.addEventListener("mousemove", this.handleMousemove);
   }
 
   componentWillUnmount() {
-    this.reference.removeEventListener("mousemove", this.increment);
+    this.reference.removeEventListener("mousemove", this.handleMousemove);
+  }
+
+  handleMousemove = () => {
+    this.props.isContinous && this.increment();
   }
 
   increment = () => {
@@ -47,7 +51,8 @@ class Item extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  counts: state.counts
+  counts: state.counts,
+  isContinous: state.isContinous
 });
 
 const mapDispatchToProps = dispatch =>
