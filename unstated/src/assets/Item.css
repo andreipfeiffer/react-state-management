@@ -1,0 +1,20 @@
+.Item {
+  /* border: 1px green solid; */
+  font-size: 12px;
+  border-radius: 1.5em;
+  min-width: 2em;
+  height: 1em;
+  line-height: 1em;
+  padding: 0.5em 0;
+  border: 1px #ccc solid;
+  /* background: #ddd; */
+  font-weight: bold;
+  margin: 0 2px;
+  cursor: pointer;
+  user-select: none;
+}
+.Item:hover {
+  background: #2b88f1;
+  border-color: #2b88f1;
+  color: #fff;
+}
