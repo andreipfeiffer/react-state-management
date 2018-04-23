@@ -2,7 +2,7 @@ import { createStore } from "redux";
 import reducer from "./reducer";
 
 const initialState = {
-  depth: 1,
+  depth: 0,
   counts: new Map(),
   isContinous: false
 };
