@@ -3,16 +3,22 @@ import { types } from "mobx-state-tree";
 export const Store = types
   .model({
     depth: types.number,
-    counts: types.map(types.number)
+    counts: types.map(types.number),
+    isContinous: types.boolean
   })
+
   .views(self => ({
     getCount(id) {
-      return (self.counts && self.counts.get(id)) || 0;
+      return self.counts.get(id) || 0;
     }
   }))
+
   .actions(self => ({
     updateDepth(value) {
       self.depth = Number(value);
+    },
+    toggleContinous() {
+      self.isContinous = !self.isContinous;
     },
     updateCount(id) {
       self.counts.set(id, self.counts.get(id) + 1 || 1);

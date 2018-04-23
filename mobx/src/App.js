@@ -6,7 +6,7 @@ import ItemWrapper from "./ItemWrapper";
 import logo from "./assets/mobx.svg";
 import "./assets/App.css";
 
-@inject("store")
+@inject("store", "constants")
 @observer
 class App extends Component {
   updateDepth = event => {
@@ -27,7 +27,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">MobX</h1>
-          <h2 className="App-subtitle">connected &nbsp;</h2>
+          <h2 className="App-subtitle">{this.props.constants.subtitle}</h2>
         </header>
         <p className="App-menu">
           <input

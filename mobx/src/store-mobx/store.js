@@ -7,7 +7,7 @@ import {
 
 useStrict(true);
 
-class Store {
+export default class Store {
   @observable depth = 0;
   @observable isContinous = false;
   @observable counts = new Map();
@@ -38,7 +38,3 @@ class Store {
     });
   }
 }
-
-export default {
-  store: new Store()
-};
