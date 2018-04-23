@@ -4,7 +4,7 @@ import reducer from "./reducer";
 const initialState = {
   depth: 1,
   counts: new Map(),
-  isContinous: true
+  isContinous: false
 };
 
 export default createStore(
