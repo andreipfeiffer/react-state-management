@@ -6,7 +6,7 @@ export default class ItemWrapper extends Component {
   render() {
     const { currentDepth, depth } = this.props;
     return (
-      <div>
+      <div className="ItemWrapper-container">
         <Item />
         {currentDepth < depth ? (
           <div className="ItemWrapper">

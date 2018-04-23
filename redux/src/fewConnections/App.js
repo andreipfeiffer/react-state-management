@@ -56,13 +56,15 @@ class App extends Component {
           <span className="label">continous update</span>
         </p>
 
-        <ItemWrapper
-          currentDepth={0}
-          depth={this.props.depth}
-          updateCount={this.updateCount}
-          counts={this.props.counts}
-          isContinous={this.props.isContinous}
-        />
+        <div className="App-content">
+          <ItemWrapper
+            currentDepth={0}
+            depth={this.props.depth}
+            updateCount={this.updateCount}
+            counts={this.props.counts}
+            isContinous={this.props.isContinous}
+          />
+        </div>
       </div>
     );
   }

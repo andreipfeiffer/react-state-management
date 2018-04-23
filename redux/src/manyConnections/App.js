@@ -23,7 +23,7 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.props.isContinous)
+    console.log(this.props.isContinous);
     return (
       <div>
         <header className="App-header">
@@ -48,7 +48,9 @@ class App extends Component {
           <span className="label">continous update</span>
         </p>
 
-        <ItemWrapper currentDepth={0} depth={this.props.depth} />
+        <div className="App-content">
+          <ItemWrapper currentDepth={0} depth={this.props.depth} />
+        </div>
       </div>
     );
   }
