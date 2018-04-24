@@ -5,11 +5,11 @@ import { Provider } from "mobx-react";
 import "./assets/index.css";
 import App from "./App";
 
-import store from "./store-mobx";
-// import store from "./store-mobx-state-tree";
+import stores from "./store-mobx";
+// import stores from "./store-mobx-state-tree";
 
 ReactDOM.render(
-  <Provider {...store}>
+  <Provider {...stores}>
     <App />
   </Provider>,
   document.getElementById("root")
