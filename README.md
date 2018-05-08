@@ -1,6 +1,8 @@
 # Application State Management in React
 
-For __Redux__, __MobX__ and __Unstated__ simply run:
+For preview https://andreipfeiffer.github.io/react-state-management/
+
+For development __Redux__, __MobX__ and __Unstated__ simply run:
 
 ```
 npm start
