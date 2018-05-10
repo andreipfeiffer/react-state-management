@@ -8,7 +8,7 @@ export default class StoreContainer extends Container {
   };
 
   updateDepth = value => {
-    this.setState({ depth: value });
+    this.setState({ depth: Math.min(+value, 9) });
   };
 
   toggleContinous() {
