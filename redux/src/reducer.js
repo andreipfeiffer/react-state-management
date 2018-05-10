@@ -29,7 +29,6 @@ export default (state, action) => {
       };
 
     case types.TOGGLE_CONTINOUS:
-    console.log(state)
       return {
         ...state,
         isContinous: !state.isContinous
