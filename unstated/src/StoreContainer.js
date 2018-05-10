@@ -2,7 +2,7 @@ import { Container } from "unstated";
 
 export default class StoreContainer extends Container {
   state = {
-    depth: 2,
+    depth: 0,
     counts: new Map(),
     isContinous: false
   };
