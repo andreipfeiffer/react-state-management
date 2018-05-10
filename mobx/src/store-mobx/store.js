@@ -13,7 +13,7 @@ export default class Store {
 
   @action
   updateDepth(value) {
-    this.depth = Math.min(+value, 9);
+    this.depth = Math.min(+value, 11);
   }
   @action
   toggleContinous() {

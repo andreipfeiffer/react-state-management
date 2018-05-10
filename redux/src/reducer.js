@@ -5,7 +5,7 @@ export default (state, action) => {
     case types.UPDATE_DEPTH:
       return {
         ...state,
-        depth: Math.min(+action.value, 9)
+        depth: Math.min(+action.value, 11)
       };
 
     case types.UPDATE_COUNT:

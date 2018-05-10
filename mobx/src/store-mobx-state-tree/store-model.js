@@ -15,7 +15,7 @@ export const Store = types
 
   .actions(self => ({
     updateDepth(value) {
-      self.depth = Number(Math.min(+value, 9));
+      self.depth = Number(Math.min(+value, 11));
     },
     toggleContinous() {
       self.isContinous = !self.isContinous;
